@@ -1,12 +1,18 @@
 import { useState, useEffect } from 'react';
 import AnimatedImage from './ui/AnimatedImage';
+import HeaderText from './ui/HeaderText';
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const carImages = [
-    { src: '/car-1.png', title: 'BMW i8 Concept' },
-    { src: '/car-2.png', title: 'BMW Vision Next' }
+    { src: '/assets/images/bezbg.png', title: 'BMW i8 Concept' },
+    { src: '/assets/images/toyotabgg.png', title: 'BMW Vision Next' },
+    { src: '/assets/images/bydbg.png', title: 'BMW i8 Concept' },
+    { src: '/assets/images/bmwbg.png', title: 'BMW i8 Concept' },
+    { src: '/assets/images/altimabg.png', title: 'BMW i8 Concept' },
+    { src: '/assets/images/landrover.png', title: 'BMW i8 Concept' },
+    { src: '/assets/images/kiabg.png', title: 'BMW Vision Next' },
   ];
 
   const nextImage = () => setCurrentImageIndex((prev) => (prev + 1) % carImages.length);
@@ -21,11 +27,10 @@ const Hero = () => {
     <section className="min-h-screen px-1 w-full bg-white text-white flex items-center justify-center relative overflow-hidden">
       <div className="max-w-7xl w-full  mx-auto  flex flex-col  items-center gap-20 md:gap-24">
         <div className="flex-1">
-          <h1 className="text-5xl uppercase text-center md:text-[4.5rem] w-full font-bold leading-tight bg-gradient-to-l from-black/5 via-gray-700 to-gray-500 bg-clip-text text-transparent">
-            GRAND MOTORS
-            
-            Quality <br />at the Right Price
-          </h1>
+          <HeaderText text="GRAND MOTORS" />
+          {/* <h1 className="text-5xl uppercase text-center md:text-[4.5rem] w-full font-bold leading-tight bg-gradient-to-l from-gray-300 via-gray-700 to-red-500 bg-clip-text text-transparent"> */}
+            <HeaderText text="Quality at the Right Price" />
+          {/* </h1> */}
 
           {/* <button className="mt-8 px-6 py-3 text-center bg-gradient-to-r from-green-500 to-green-700 rounded-full text-black font-semibold hover:brightness-110 transition">
             Contact Us

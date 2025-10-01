@@ -445,3 +445,168 @@ body {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
+
+/* Service Section Animations */
+@keyframes service-card-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes service-icon-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes service-brand-slide {
+  0% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes service-feature-appear {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.service-card-float {
+  animation: service-card-float 6s ease-in-out infinite;
+}
+
+.service-icon-pulse {
+  animation: service-icon-pulse 3s ease-in-out infinite;
+}
+
+.service-brand-slide {
+  animation: service-brand-slide 0.5s ease-out forwards;
+}
+
+.service-feature-appear {
+  animation: service-feature-appear 0.6s ease-out forwards;
+}
+
+/* Service Card Hover Effects */
+.service-card:hover .service-icon {
+  animation: service-icon-pulse 1s ease-in-out;
+}
+
+.service-card:hover .service-brand {
+  animation: service-brand-slide 0.3s ease-out;
+}
+
+.service-card:hover .service-feature {
+  animation: service-feature-appear 0.4s ease-out;
+}
+
+/* Service Section Background Pattern */
+.service-bg-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(147, 51, 234, 0.1) 0%, transparent 50%);
+}
+
+/* Service Card Gradient Borders */
+.service-gradient-border {
+  position: relative;
+}
+
+.service-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4);
+  border-radius: 24px;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+/* Service Icon Glow Effect */
+.service-icon-glow {
+  box-shadow: 
+    0 0 20px rgba(59, 130, 246, 0.3),
+    0 0 40px rgba(59, 130, 246, 0.2),
+    0 0 60px rgba(59, 130, 246, 0.1);
+}
+
+.service-icon-glow-green {
+  box-shadow: 
+    0 0 20px rgba(34, 197, 94, 0.3),
+    0 0 40px rgba(34, 197, 94, 0.2),
+    0 0 60px rgba(34, 197, 94, 0.1);
+}
+
+.service-icon-glow-purple {
+  box-shadow: 
+    0 0 20px rgba(147, 51, 234, 0.3),
+    0 0 40px rgba(147, 51, 234, 0.2),
+    0 0 60px rgba(147, 51, 234, 0.1);
+}
+
+/* Infinite scroll animation for brands */
+@keyframes scroll-infinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-infinite {
+  animation: scroll-infinite 30s linear infinite;
+}
+
+.brands-scroll-container:hover .animate-scroll-infinite {
+  animation-play-state: paused;
+}
+
+/* Marquee animation for enable-animation-x class */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.enable-animation-x {
+  animation: marquee 30s linear infinite;
+}
+
+.stopScroll:hover .enable-animation-x {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Brand card hover effects */
+.brand-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.shadow-3xl {
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  filter: blur(0px) drop-shadow(0 20px 25px rgba(0, 0, 0, 0.15));
+}
+
+.service-card {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.service-card:hover {
+  backdrop-filter: blur(15px);
+  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.2));
+}

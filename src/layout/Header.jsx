@@ -21,9 +21,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">GG</span>
-              </div>
+              <img src="/assets/images/logo.jpg" alt="Grand Group" className="w-20 h-16 scale-150 pr-4" />
               <div>
                 <h1 className="text-xl font-bold text-gray-900">Grand Group</h1>
                 <p className="text-sm text-gray-600">General Trading</p>
@@ -39,8 +37,8 @@ const Header = () => {
                 to={item.href}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                   isActive(item.href)
-                    ? 'text-blue-600 bg-blue-50'
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                    ? 'text-gray-600 bg-gray-50'
+                    : 'text-gray-700 hover:text-gray-600 hover:bg-gray-50'
                 }`}
               >
                 {item.name}
@@ -52,7 +50,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
             >
               <span className="sr-only">Open main menu</span>
               {!isMenuOpen ? (
@@ -78,8 +76,8 @@ const Header = () => {
                   to={item.href}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
                     isActive(item.href)
-                      ? 'text-blue-600 bg-blue-50'
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                      ? 'text-gray-600 bg-gray-50'
+                      : 'text-gray-700 hover:text-gray-600 hover:bg-gray-50'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >

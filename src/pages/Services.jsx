@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import BgImage from '../components/ui/BgImage';
+import HeaderText from '../components/ui/HeaderText';
 
 const Services = () => {
   const services = [
@@ -7,19 +9,43 @@ const Services = () => {
       title: 'Grand Motors',
       subtitle: 'Modern Car Trading',
       year: '2020',
-      description: 'Specialized in selling new and modern cars from global brands. We import cars from Dubai to Erbil and offer both wholesale and retail sales.',
+      description: 'Specialized in selling new and modern cars from global brands. We import cars from Dubai, China, South Korea, Germany, USA, to Erbil and offer both wholesale and retail sales.',
       features: [
         'New and modern cars from global brands',
-        'Import cars from Dubai to Erbil',
+        'Import cars from Dubai, China,South Korea, Germany, USA to Erbil',
         'Wholesale and retail sales',
         'Quality assurance and warranty',
         'Competitive pricing',
         'Professional consultation'
       ],
       brands: ['Toyota', 'Nissan', 'Hyundai', 'Kia', 'Mercedes Benz', 'Land Rover', 'BMW', 'Chery', 'GAC MG', 'BYD'],
-      icon: '🚗',
-      color: 'from-blue-600 to-blue-800',
-      bgColor: 'from-blue-50 to-blue-100'
+      image: '/assets/images/service1.jpg',
+      color: 'from-red-600 to-red-800',
+      bgColor: 'from-red-50 to-red-100'
+    },
+     {
+      id: 'grand-transportation',
+      title: 'Grand Transportation & Shipping',
+      subtitle: 'Transportation & Logistics',
+      year: '2022',
+      description: 'Professional car shipping from Dubai to Iraq and comprehensive ground transportation and logistics services.',
+      features: [
+        'Car shipping from Dubai to Iraq',
+        'Ground transportation services',
+        'Logistics and supply chain solutions',
+        'Secure and insured shipping',
+        'Tracking and monitoring',
+        'Customs clearance assistance'
+      ],
+      routes: [
+        'Dubai to Erbil',
+        'Dubai to Baghdad',
+        'Regional transportation',
+        'Cross-border logistics'
+      ],
+      image: '/assets/images/tras.webp',
+      color: 'from-red-600 to-red-800',
+      bgColor: 'from-red-50 to-red-100'
     },
     {
       id: 'grand-rent',
@@ -43,59 +69,37 @@ const Services = () => {
         'Wide vehicle selection',
         'Convenient locations'
       ],
-      icon: '🔑',
-      color: 'from-green-600 to-green-800',
-      bgColor: 'from-green-50 to-green-100'
+      image: '/assets/images/service5.jpg',
+      color: 'from-red-600 to-red-800',
+      bgColor: 'from-red-50 to-red-100'
     },
-    {
-      id: 'grand-transportation',
-      title: 'Grand Transportation & Shipping',
-      subtitle: 'Transportation & Logistics',
-      year: '2022',
-      description: 'Professional car shipping from Dubai to Iraq and comprehensive ground transportation and logistics services.',
-      features: [
-        'Car shipping from Dubai to Iraq',
-        'Ground transportation services',
-        'Logistics and supply chain solutions',
-        'Secure and insured shipping',
-        'Tracking and monitoring',
-        'Customs clearance assistance'
-      ],
-      routes: [
-        'Dubai to Erbil',
-        'Dubai to Baghdad',
-        'Regional transportation',
-        'Cross-border logistics'
-      ],
-      icon: '🚛',
-      color: 'from-purple-600 to-purple-800',
-      bgColor: 'from-purple-50 to-purple-100'
-    }
+   
   ];
 
   const stats = [
-    { number: '2,800+', label: 'Cars Sold', icon: '🚗' },
-    { number: '500+', label: 'Rental Clients', icon: '🔑' },
-    { number: '1,200+', label: 'Cars Shipped', icon: '🚛' },
-    { number: '98%', label: 'Customer Satisfaction', icon: '⭐' }
+    { number: '8000+', label: 'Cars Sold', icon: '' },
+    { number: '500+', label: 'Rental Clients', icon: '' },
+    { number: '4,200+', label: 'Cars Shipped', icon: '' },
+    { number: '98%', label: 'Customer Satisfaction', icon: '' }
   ];
 
   return (
     <div>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
+
+  <BgImage src="/assets/images/service3.jpg" alt="Grand Motors Showroom" />
+        
+
+
+      {/* Stats Section */}
+      <section className="py-28 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Services</h1>
+          <HeaderText text="Our Services" />
           <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
             Comprehensive automotive solutions across three specialized divisions, 
             serving customers throughout Iraq and the region.
           </p>
         </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto pt-28 px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
@@ -118,9 +122,10 @@ const Services = () => {
                 <div className="flex items-center mb-4">
                   <div className="text-5xl mr-4">{service.icon}</div>
                   <div>
+                    
                     <h2 className="text-4xl font-bold text-gray-900">{service.title}</h2>
                     <p className="text-xl text-gray-600">{service.subtitle}</p>
-                    <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mt-2">
+                    <span className="inline-block bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium mt-2">
                       Since {service.year}
                     </span>
                   </div>
@@ -136,7 +141,7 @@ const Services = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {service.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center">
-                          <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                          <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
                           <span className="text-gray-700">{feature}</span>
                         </div>
                       ))}
@@ -148,7 +153,7 @@ const Services = () => {
                       <h3 className="text-xl font-semibold text-gray-900 mb-3">Available Brands:</h3>
                       <div className="flex flex-wrap gap-2">
                         {service.brands.map((brand, idx) => (
-                          <span key={idx} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                          <span key={idx} className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">
                             {brand}
                           </span>
                         ))}
@@ -162,7 +167,7 @@ const Services = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {service.benefits.map((benefit, idx) => (
                           <div key={idx} className="flex items-center">
-                            <div className="w-2 h-2 bg-green-600 rounded-full mr-3"></div>
+                            <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
                             <span className="text-gray-700">{benefit}</span>
                           </div>
                         ))}
@@ -176,7 +181,7 @@ const Services = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {service.routes.map((route, idx) => (
                           <div key={idx} className="flex items-center">
-                            <div className="w-2 h-2 bg-purple-600 rounded-full mr-3"></div>
+                            <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
                             <span className="text-gray-700">{route}</span>
                           </div>
                         ))}
@@ -188,15 +193,14 @@ const Services = () => {
 
               {/* Visual */}
               <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
-                <div className={`bg-gradient-to-br ${service.bgColor} rounded-3xl p-8 h-96 flex items-center justify-center`}>
-                  <div className="text-center">
-                    <div className="text-8xl mb-6">{service.icon}</div>
-                    <div className={`bg-gradient-to-r ${service.color} text-white px-8 py-4 rounded-2xl inline-block`}>
-                      <div className="text-2xl font-bold">{service.title}</div>
-                      <div className="text-lg opacity-90">{service.subtitle}</div>
-                    </div>
-                  </div>
-                </div>
+              <div className="relative bg-gradient-to-br from-red-50 to-red-50 rounded-2xl p-6 overflow-hidden">
+              {/* Background Image */}
+                <img 
+                  src={service.image} 
+                  alt="Statistics Background" 
+                  className="w-full h-full object-cover "
+                />
+            </div>
               </div>
             </div>
           </div>
@@ -204,7 +208,7 @@ const Services = () => {
       ))}
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-16 bg-gradient-to-r from-red-400 to-red-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
@@ -213,13 +217,13 @@ const Services = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to="/contact" 
-              className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300"
+              className="bg-white text-red-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300"
             >
               Contact Us
             </Link>
             <Link 
               to="/" 
-              className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300"
+              className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-red-600 transition-colors duration-300"
             >
               Learn More
             </Link>

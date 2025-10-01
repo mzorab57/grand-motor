@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import HeaderText from '../components/ui/HeaderText';
+import BgImage from '../components/ui/BgImage';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -18,9 +20,32 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will contact you soon.');
+    
+    // Create email content
+    const emailSubject = `New Contact Form Submission from ${formData.name}`;
+    const emailBody = `
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}
+Service Interest: ${formData.service || 'Not specified'}
+
+Message:
+${formData.message}
+
+---
+This message was sent from the Grand Motors website contact form.
+    `.trim();
+
+    // Create mailto link
+    const mailtoLink = `mailto:mzorab57@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show success message
+    alert('Thank you for your message! Your email client will open to send the message to mzorab57@gmail.com');
+    
+    // Reset form
     setFormData({
       name: '',
       email: '',
@@ -35,26 +60,21 @@ const Contact = () => {
       title: 'Main Office',
       details: 'Erbil - 40 Meter - Showroom No. (22)',
       icon: '📍',
-      color: 'text-blue-600'
+      color: 'text-red-600'
     },
     {
       title: 'Phone',
-      details: '+964 750 123 4567',
+      details: '+964 7503772828',
       icon: '📞',
-      color: 'text-green-600'
+      color: 'text-red-600'
     },
     {
       title: 'Email',
-      details: 'info@grandgroup-iraq.com',
+      details: 'mzorab57@gmail.com',
       icon: '✉️',
-      color: 'text-purple-600'
+      color: 'text-red-600'
     },
-    {
-      title: 'Working Hours',
-      details: 'Sunday - Thursday: 9:00 AM - 6:00 PM',
-      icon: '🕒',
-      color: 'text-orange-600'
-    }
+    
   ];
 
   const services = [
@@ -65,35 +85,23 @@ const Contact = () => {
     'Other'
   ];
 
-  const socialLinks = [
-    { name: 'Facebook', icon: '📘', url: '#' },
-    { name: 'Instagram', icon: '📷', url: '#' },
-    { name: 'WhatsApp', icon: '💬', url: '#' },
-    { name: 'LinkedIn', icon: '💼', url: '#' }
-  ];
 
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Contact Us</h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
-            Get in touch with Grand Group for all your automotive needs. 
-            We're here to help you find the perfect solution.
-          </p>
-        </div>
-      </section>
+     <BgImage src="/assets/images/contact.webp" alt="Grand Motors Contact" />
 
       {/* Contact Information */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">📞 Contact Information</h2>
-            <p className="text-xl text-gray-600">Multiple ways to reach us</p>
+        
+        <div className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8">
+          <div className="text-center my-24">
+            <HeaderText text="Contact Information" />
+            <p className="text-xl text-gray-600"> Get in touch with Grand Group for all your automotive needs. 
+            We're here to help you find the perfect solution.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {contactInfo.map((info, index) => (
               <div key={index} className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <div className="text-5xl mb-4">{info.icon}</div>
@@ -125,7 +133,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors duration-300"
                       placeholder="Your full name"
                     />
                   </div>
@@ -140,7 +148,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors duration-300"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -157,7 +165,7 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors duration-300"
                       placeholder="+964 750 123 4567"
                     />
                   </div>
@@ -170,7 +178,7 @@ const Contact = () => {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors duration-300"
                     >
                       <option value="">Select a service</option>
                       {services.map((service, index) => (
@@ -191,71 +199,44 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-300 resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors duration-300 resize-none"
                     placeholder="Tell us about your requirements or questions..."
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-8 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+                  className="w-full bg-gradient-to-r from-red-600 to-purple-600 text-white py-4 px-8 rounded-xl font-semibold hover:from-red-700 hover:to-purple-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
                 >
-                  Send Message 📤
+                  Send Message
                 </button>
               </form>
             </div>
 
             {/* Location and Additional Info */}
             <div className="space-y-8">
-              {/* Map Placeholder */}
-              <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl p-8 h-64 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🗺️</div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Find Us Here</h3>
-                  <p className="text-gray-700">Erbil - 40 Meter - Showroom No. (22)</p>
-                  <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700 transition-colors duration-300">
-                    Open in Maps
-                  </button>
-                </div>
-              </div>
-
-              {/* Social Media */}
-              <div className="bg-white rounded-3xl p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Follow Us</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {socialLinks.map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.url}
-                      className="flex items-center justify-center p-4 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                    >
-                      <span className="text-2xl mr-3">{social.icon}</span>
-                      <span className="font-medium text-gray-700">{social.name}</span>
-                    </a>
-                  ))}
-                </div>
-              </div>
+             
 
               {/* Quick Stats */}
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-3xl p-8">
+              <div className="bg-gradient-to-r from-red-600 to-purple-600 text-white rounded-3xl p-8">
                 <h3 className="text-2xl font-bold mb-6">Why Choose Us?</h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
-                    <div className="text-2xl mr-4">⚡</div>
+                    <div className="text-2xl mr-4"></div>
                     <div>
                       <div className="font-semibold">Fast Response</div>
                       <div className="text-sm opacity-90">We respond within 24 hours</div>
                     </div>
                   </div>
                   <div className="flex items-center">
-                    <div className="text-2xl mr-4">🏆</div>
+                    <div className="text-2xl mr-4"></div>
                     <div>
                       <div className="font-semibold">Expert Team</div>
                       <div className="text-sm opacity-90">10+ years of experience</div>
                     </div>
                   </div>
                   <div className="flex items-center">
-                    <div className="text-2xl mr-4">🤝</div>
+                    <div className="text-2xl mr-4"></div>
                     <div>
                       <div className="font-semibold">Trusted Partner</div>
                       <div className="text-sm opacity-90">2,800+ satisfied customers</div>
@@ -272,7 +253,7 @@ const Contact = () => {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">❓ Frequently Asked Questions</h2>
+            <HeaderText text="Frequently Asked Questions" />
             <p className="text-xl text-gray-600">Quick answers to common questions</p>
           </div>
 
@@ -292,7 +273,7 @@ const Contact = () => {
               },
               {
                 question: "What are your working hours?",
-                answer: "We are open Sunday through Thursday from 9:00 AM to 6:00 PM. We're closed on Fridays and Saturdays."
+                answer: "We are open Sunday through Thursday from 9:00 AM to 6:00 PM. We're closed on Fridays."
               }
             ].map((faq, index) => (
               <div key={index} className="bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-colors duration-300">
