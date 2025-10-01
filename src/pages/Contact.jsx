@@ -89,7 +89,7 @@ This message was sent from the Grand Motors website contact form.
   return (
     <div>
       {/* Hero Section */}
-     <BgImage src="/assets/images/contact.webp" alt="Grand Motors Contact" />
+     <BgImage src="/assets/images/service5.jpg" alt="Grand Motors Contact" />
 
       {/* Contact Information */}
       <section className="py-16 bg-white">

@@ -24,8 +24,8 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="min-h-screen px-1 w-full bg-white text-white flex items-center justify-center relative overflow-hidden">
-      <div className="max-w-7xl w-full  mx-auto  flex flex-col  items-center gap-20 md:gap-24">
+    <section className="min-h-screen px-1 w-full bg-white text-white flex items-start justify-start mt-24 relative overflow-hidden">
+      <div className="max-w-7xl w-full  mx-auto  flex flex-col   items-center gap-20 md:gap-24">
         <div className="flex-1">
           <HeaderText text="GRAND MOTORS" />
           {/* <h1 className="text-5xl uppercase text-center md:text-[4.5rem] w-full font-bold leading-tight bg-gradient-to-l from-gray-300 via-gray-700 to-red-500 bg-clip-text text-transparent"> */}

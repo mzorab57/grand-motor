@@ -21,7 +21,7 @@ const VisionMision = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
             {/* Vision Card */}
             <div className="group">
-              <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 md:p-10  hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 ">
+              <div className="bg-white/95 backdrop-blur-sm rounded-3xl  md:p-10  hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 ">
                 <div className="flex items-center justify-center mb-8">
                   {/* <div className="w-20 h-20 border border-red-300 rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
                     <FaEye className="text-3xl text-red-400" />

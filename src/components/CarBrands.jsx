@@ -4,7 +4,7 @@ import HeaderText from './ui/HeaderText';
 const CarBrands = () => {
 
      const brands = [
-    'Toyota', 'Nissan', 'Hyundai', 'Kia', 'Mercedes Benz', 
+    'Toyota', 'Nissan', 'Hyundai', 'Kia', 'Mercedes', 
     'Land Rover', 'BMW', 'Chery', 'GAC MG', 'BYD'
   ];
 

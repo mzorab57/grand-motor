@@ -11,7 +11,7 @@ const ServiceSection = () => {
       description: "New and modern cars from global brands",
       brands: ["Toyota", "Nissan", "Hyundai", "Kia", "Mercedes Benz", "Land Rover", "BMW", "Chery", "GAC MG", "BYD"],
       features: ["Import from Dubai to Erbil", "Wholesale and retail sales", "B2B & B2C"],
-      location: "Dubai-Erbil",
+      location: "Dubai, China, South Korea, Germany, USA,",
       backgroundImage: "/assets/images/service1.jpg",
       icon: (
         <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
@@ -46,7 +46,7 @@ const ServiceSection = () => {
       title: "Grand Transportation",
       subtitle: "Shipping & Logistics",
       since: "Since 2022",
-      description: "Car shipping from Dubai to Iraq",
+      description: "Car shipping from Dubai, China, South Korea, Germany, USA, to Iraq",
       features: ["Ground transportation services", "Comprehensive logistics solutions", "International shipping", "Reliable delivery network"],
       highlights: ["Logistics", "Regional"],
       backgroundImage: "/assets/images/service2.jpg",
@@ -125,7 +125,7 @@ const ServiceSection = () => {
 
                 {/* Brands (for Automotive Trading) */}
                 {service.brands && (
-                  <div className="mb-6">
+                  <div className="mb-1">
                     <h4 className="text-sm font-semibold text-white mb-3 drop-shadow-md">Global Brands:</h4>
                     <div className="flex flex-wrap gap-2">
                       {service.brands.map((brand, idx) => (
@@ -143,7 +143,7 @@ const ServiceSection = () => {
 
                 {/* Features */}
                 <div className="mb-6  ">
-                  <h4 className="text-sm font-semibold text-white mb-3 drop-shadow-md">Features:</h4>
+                  <h4 className="text-sm font-semibold text-white mb-1 drop-shadow-md">Features:</h4>
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <li 
