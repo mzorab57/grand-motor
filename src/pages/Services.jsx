@@ -1,235 +1,82 @@
 import { Link } from 'react-router-dom';
+import { Car, Key, ShieldCheck, Truck } from 'lucide-react';
 import BgImage from '../components/ui/BgImage';
 import HeaderText from '../components/ui/HeaderText';
+import { Component as ParallaxScrollFeatureSection } from '../components/ui/parallax-scroll-feature-section';
 
 const Services = () => {
-  const services = [
+  const serviceSections = [
     {
-      id: 'grand-motors',
+      id: 'service-1',
+      eyebrow: 'Grand Motors',
       title: 'Grand Motors',
-      subtitle: 'Modern Car Trading',
-      year: '2020',
-      description: 'Specialized in selling new and modern cars from global brands. We import cars from Dubai, China, South Korea, Germany, USA, to Erbil and offer both wholesale and retail sales.',
-      features: [
-        'New and modern cars from global brands',
-        'Import cars from Dubai, China,South Korea, Germany, USA to Erbil',
-        'Wholesale and retail sales',
-        'Quality assurance and warranty',
-        'Competitive pricing',
-        'Professional consultation'
-      ],
-      brands: ['Toyota', 'Nissan', 'Hyundai', 'Kia', 'Mercedes Benz', 'Land Rover', 'BMW', 'Chery', 'GAC MG', 'BYD'],
-      image: '/assets/images/service1.jpg',
-      color: 'from-red-600 to-red-800',
-      bgColor: 'from-red-50 to-red-100'
-    },
-     {
-      id: 'grand-transportation',
-      title: 'Grand Transportation & Shipping',
-      subtitle: 'Transportation & Logistics',
-      year: '2022',
-      description: 'Professional car shipping from Dubai to Iraq and comprehensive ground transportation and logistics services.',
-      features: [
-        'Car shipping from Dubai to Iraq',
-        'Ground transportation services',
-        'Logistics and supply chain solutions',
-        'Secure and insured shipping',
-        'Tracking and monitoring',
-        'Customs clearance assistance'
-      ],
-      routes: [
-        'Dubai to Erbil',
-        'Dubai to Baghdad',
-        'Regional transportation',
-        'Cross-border logistics'
-      ],
-      image: '/assets/images/tras.webp',
-      color: 'from-red-600 to-red-800',
-      bgColor: 'from-red-50 to-red-100'
+      description:
+        'Specialized in modern car trading with a curated lineup from trusted global brands. We source and import selected vehicles from Dubai, China, South Korea, Germany, and the USA directly to Erbil.',
+      imageUrl: '/assets/images/service1.jpg',
+      badge: 'Est. 2020',
+      reverse: false,
+      tags: ['Toyota', 'Nissan', 'BMW', 'Mercedes', 'Direct Import'],
     },
     {
-      id: 'grand-rent',
-      title: 'Grand Rent A Car',
-      subtitle: 'Car Rental Services',
-      year: '2023',
-      description: 'Modern car rental services for short and long-term periods. We serve both companies and individuals with flexible rental options.',
-      features: [
-        'Short and long-term car rental',
-        'Services for companies and individuals',
-        'Modern and well-maintained fleet',
-        'Flexible rental packages',
-        '24/7 customer support',
-        'Competitive rental rates'
-      ],
-      benefits: [
-        'No maintenance costs',
-        'Insurance included',
-        'Flexible terms',
-        'Professional service',
-        'Wide vehicle selection',
-        'Convenient locations'
-      ],
-      image: '/assets/images/service5.jpg',
-      color: 'from-red-600 to-red-800',
-      bgColor: 'from-red-50 to-red-100'
+      id: 'service-2',
+      eyebrow: 'Grand Transportation',
+      title: 'Grand Transportation',
+      description:
+        'Professional logistics and vehicle shipping from Dubai to Iraq with organized routing, customs follow-up, and dependable coordination built for customers who value clarity and speed.',
+      imageUrl: '/assets/images/service2.jpg',
+      badge: 'Est. 2022',
+      reverse: true,
+      tags: ['Dubai to Iraq', 'Insured Shipping', 'Real-Time Tracking', 'Regional Routes'],
     },
-   
+    {
+      id: 'service-3',
+      eyebrow: 'Grand Rent A Car',
+      title: 'Grand Rent A Car',
+      description:
+        'Premium rental services with a modern fleet for short and long-term use. We provide flexible solutions for individuals, visiting teams, and corporate clients across Iraq.',
+      imageUrl: '/assets/images/service5.jpg',
+      badge: 'Est. 2023',
+      reverse: false,
+      tags: ['Modern Fleet', '24/7 Support', 'Corporate Rates', 'Flexible Terms'],
+    },
   ];
 
-  const stats = [
-    { number: '8000+', label: 'Cars Sold', icon: '' },
-    { number: '500+', label: 'Rental Clients', icon: '' },
-    { number: '4,200+', label: 'Cars Shipped', icon: '' },
-    { number: '98%', label: 'Customer Satisfaction', icon: '' }
-  ];
+
 
   return (
-    <div>
-
-  <BgImage src="/assets/images/service3.jpg" alt="Grand Motors Showroom" />
+    <div className="overflow-x-hidden">
+      <div className="relative h-[60vh] md:h-[70vh]">
+        <BgImage src="/assets/images/bg/hero3.png" alt="Grand Motors" />
         
+      </div>
 
-
-      {/* Stats Section */}
-      <section className="py-28 ">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <HeaderText text="Our Services" />
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
-            Comprehensive automotive solutions across three specialized divisions, 
-            serving customers throughout Iraq and the region.
-          </p>
-        </div>
-        <div className="max-w-7xl mx-auto pt-28 px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-5xl mb-3">{stat.icon}</div>
-                <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{stat.number}</div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
-              </div>
-            ))}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-14">
+            <HeaderText text="Comprehensive Solutions" />
+            <p className="text-lg md:text-xl text-gray-500 max-w-3xl mt-6">
+              Grand Group provides a seamless automotive ecosystem from vehicle
+              sourcing and shipping to premium rental services, all presented
+              through a more immersive service journey.
+            </p>
           </div>
+
+   
         </div>
       </section>
 
-      {/* Services Sections */}
-      {services.map((service, index) => (
-        <section key={service.id} className={`py-16 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-              {/* Content */}
-              <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                <div className="flex items-center mb-4">
-                  <div className="text-5xl mr-4">{service.icon}</div>
-                  <div>
-                    
-                    <h2 className="text-4xl font-bold text-gray-900">{service.title}</h2>
-                    <p className="text-xl text-gray-600">{service.subtitle}</p>
-                    <span className="inline-block bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium mt-2">
-                      Since {service.year}
-                    </span>
-                  </div>
-                </div>
-                
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  {service.description}
-                </p>
+      <ParallaxScrollFeatureSection
+        intro={{
+          eyebrow: 'Grand Group Services',
+          title: 'A premium journey through every division.',
+          description:
+            'Scroll through our automotive ecosystem and discover how trading, transportation, and rental services work together under one trusted brand.',
+        }}
+        sections={serviceSections}
+       
+      />
 
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">Key Features:</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {service.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center">
-                          <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
-                          <span className="text-gray-700">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {service.brands && (
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-3">Available Brands:</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {service.brands.map((brand, idx) => (
-                          <span key={idx} className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">
-                            {brand}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {service.benefits && (
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-3">Benefits:</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {service.benefits.map((benefit, idx) => (
-                          <div key={idx} className="flex items-center">
-                            <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
-                            <span className="text-gray-700">{benefit}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {service.routes && (
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-3">Available Routes:</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {service.routes.map((route, idx) => (
-                          <div key={idx} className="flex items-center">
-                            <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
-                            <span className="text-gray-700">{route}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Visual */}
-              <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
-              <div className="relative bg-gradient-to-br from-red-50 to-red-50 rounded-2xl p-6 overflow-hidden">
-              {/* Background Image */}
-                <img 
-                  src={service.image} 
-                  alt="Statistics Background" 
-                  className="w-full h-full object-cover "
-                />
-            </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      ))}
-
-      {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-r from-red-400 to-red-500 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Contact us today to learn more about our services and how we can help meet your automotive needs.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              to="/contact" 
-              className="bg-white text-red-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300"
-            >
-              Contact Us
-            </Link>
-            <Link 
-              to="/" 
-              className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-red-600 transition-colors duration-300"
-            >
-              Learn More
-            </Link>
-          </div>
-        </div>
-      </section>
+    
     </div>
   );
 };

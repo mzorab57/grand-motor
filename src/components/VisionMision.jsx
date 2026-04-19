@@ -13,7 +13,12 @@ const VisionMision = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <HeaderText text="Vision & Mission" />
+            <div className="text-3xl max-w-7xl camel-case text-start md:text-[150px] w-full
+     font-medium leading-tight bg-gradient-to-r from-gray-400 via-gray-800
+      to-gray-300 bg-clip-text text-transparent">
+     Vision & Mission
+    </div>
+            {/* <HeaderText text="Vision & Mission" /> */}
             
             <div className="w-24 h-1 bg-white mx-auto rounded-full"></div>
           </div>
@@ -38,10 +43,7 @@ const VisionMision = () => {
                   and rental services, with future regional expansion.
                 </p>
                 
-                {/* Decorative accent */}
-                <div className="mt-8 flex justify-center">
-                  <div className="w-16 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full"></div>
-                </div>
+               
               </div>
             </div>
 
@@ -63,10 +65,7 @@ const VisionMision = () => {
                   and exceptional service to meet the needs of our customers and partners.
                 </p>
                 
-                {/* Decorative accent */}
-                <div className="mt-8 flex justify-center">
-                  <div className="w-16 h-1 bg-gradient-to-r from-red-600 to-red-700 rounded-full"></div>
-                </div>
+                
               </div>
             </div>
           </div>
